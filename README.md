@@ -1,9 +1,9 @@
-#DEEP LEARNING#
+DEEP LEARNING
 ---
 
-##Artificial Neural Network##<br>
+Artificial Neural Network<br>
 
-Python example<br>
+_Python example_<br>
 
 >pip install requirements.txt
 
