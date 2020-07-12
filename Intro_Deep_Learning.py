@@ -9,6 +9,7 @@ import tensorflow as tf
 from tensorflow import keras
 import numpy as np
 import matplotlib.pyplot as plt
+from keras.models import load_model
 
 # Loading data(fashion includes different clothes) from keras
 
@@ -47,3 +48,20 @@ model.fit(train_images, train_labels, epochs=5)
 
 test_loss, test_acc = model.evaluate(test_images, test_labels)
 print("Tested Acc : ", test_acc)
+
+# Using model to predict
+
+model.save('fashion_mnist.h5')
+#load_model('fashion_mnist.h5')
+prediction = model.predict([test_images]) # takes np.array()
+print(np.argmax(prediction[0]))           # print the largest value and get the index of that value of image -> 0
+print('Output : ',class_names[np.argmax(prediction[0])]) # Print the class name of the given result
+
+# To present prediction for 5 inputs using matplot
+
+for i in range(5):
+    plt.grid(False)
+    plt.imshow(test_images[i], cmp = plt.cmap.binary)
+    plt.xlabel("Actual : ",class_labels[test_labels[i]])
+    plt.title("Prediction : ", class_names[np.argmax(prediction[i])])
+    plt.show()

@@ -26,6 +26,8 @@ Neural network is model that is used to recognise complex pattern in data. It is
 
 ## 2. Loading and Looking at data 
 
+>Python code :-
+
 ```Python
 # Prediction of clothes through images (shirt, shoes etc).
 
@@ -56,7 +58,6 @@ plt.show()
 ```
 ## 3. Creating a model in tensorflow
 
-
 ![Model](Images/Fashion_model_creation.png)*Screenshot of training of model.*
 >Python code :-
 
@@ -81,6 +82,9 @@ model.fit(train_images, train_labels, epochs=5)
 test_loss, test_acc = model.evaluate(test_images, test_labels)
 print("Tested Acc : ", test_acc)
 ```
+## 4. Using the model for prediction
+
+
 
 ## Artificial Neural Network
 
