@@ -17,5 +17,8 @@ data = keras.datasets.fashion_mnist
 # Splitting the images and labels into train and test data.
 
 (train_images, train_labels), (test_images, test_labels) = data.load_data()
-print(train_label[0])
+print(train_labels[6])
+
 # Adding labels in list so that it can be easilyi identified later
+
+class_names = ['T-shirt/top','T-shirt/top','Trouser','Pullover','Dress','Coat','Sandal','Shirt','Sneaker','Bag','Ankle-Boot']
