@@ -56,6 +56,32 @@ plt.show()
 ```
 ## 3. Creating a model in tensorflow
 
+
+![Model](Images/Fashion_model_creation.png)*Screenshot of training of model.
+>Python code :-
+
+```Python
+# Creating a model
+
+model = keras.Sequential([
+    keras.layers.Flatten(input_shape = (28,28)), # Input Layer
+    keras.layers.Dense(128, activation= 'relu'), # Hidden Layer
+    keras.layers.Dense(10, activation='softmax') # Output Layer
+])
+
+model.compile(optimizer='adam', loss ='sparse_categorical_crossentropy', metrics = ['accuracy'])
+
+# Training of Model
+
+model.fit(train_images, train_labels, epochs=5)
+
+
+# Evaluation of model(testing of data)
+
+test_loss, test_acc = model.evaluate(test_images, test_labels)
+print("Tested Acc : ", test_acc)
+```
+
 ## Artificial Neural Network
 
 _Python example_<br>
