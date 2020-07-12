@@ -47,6 +47,11 @@ data = keras.datasets.fashion_mnist
 (train_images, train_labels), (test_images, test_labels) = data.load_data()
 print(train_labels[6])
 
+# As value of array of train_imagess between pixel value ranging from 1-255
+
+train_images = train_images/255.0
+test_images = test_images/255.0
+
 # Adding labels in list so that it can be easilyi identified later
 
 class_names = ['T-shirt/top','Trouser','Pullover','Dress','Coat','Sandal','Shirt','Sneaker','Bag','Ankle-Boot']
