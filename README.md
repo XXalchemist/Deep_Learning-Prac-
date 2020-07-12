@@ -10,7 +10,7 @@ DEEP LEARNING
 4. Using the model to make Prediction
 5. Text Classification (example)
 
-## What is Neural Network
+## 1. What is Neural Network
 
 Neural network is model that is used to recognise complex pattern in data. It is inspired by the biological neural network that constitutes human. It consist of multiple layers and every layer have two main attributes :- Nodes (as Neurons) and Edges (as the connection between the nodes).
 
@@ -24,7 +24,7 @@ Neural network is model that is used to recognise complex pattern in data. It is
 #### Neural Network used for Unlabelled data(Unsupervised Learning) :-
 `Feature Extraction (RBM)` `Pattern Recognition (Autoencoders)` 
 
-## Loading and Looking at data 
+## 2. Loading and Looking at data 
 
 ```Python
 # Prediction of clothes through images (shirt, shoes etc).
@@ -54,6 +54,7 @@ class_names = ['T-shirt/top','Trouser','Pullover','Dress','Coat','Sandal','Shirt
 plt.imshow(train_images[7], cmap = plt.cm.binary)
 plt.show()
 ```
+## 3. Creating a model in tensorflow
 
 ## Artificial Neural Network
 
