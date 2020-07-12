@@ -31,7 +31,7 @@ plt.show()
 # Creating a model
 
 model = keras.Sequential([
-    keras.layers.flatten(input_shape = (28,28)), # Input Layer
+    keras.layers.Flatten(input_shape = (28,28)), # Input Layer
     keras.layers.Dense(128, activation= 'relu'), # Hidden Layer
     keras.layers.Dense(10, activation='softmax') # Output Layer
 ])
