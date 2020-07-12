@@ -89,7 +89,7 @@ print("Tested Acc : ", test_acc)
 ```
 ## 4. Using the model for prediction
 
-!['Evaluation_of_model](Images/testing.png) !['Evaluation_of_model](Images/testing_2.png)*Screenshots of output*
+!['Evaluation_of_model](Images/testing.png) !['Evaluation_of_model](Images/testing_2.png)*Screenshots of outputs*<br>
 
 >Python code :-
 
