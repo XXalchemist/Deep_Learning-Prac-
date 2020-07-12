@@ -22,12 +22,16 @@ print(train_labels[6])
 
 # Adding labels in list so that it can be easilyi identified later
 
-class_names = ['T-shirt/top','Trouser','Pullover','Dress','Coat','Sandal','Shirt','Sneaker','Bag','Ankle-Boot']
+class_names = ['T-shirt/top','Trouser','Pullover','Dress','Coat',
+                'Sandal','Shirt','Sneaker','Bag','Ankle-Boot']
 
 # Showing the image using matplot
 
 plt.imshow(train_images[7], cmap = plt.cm.binary)
 plt.show()
+
+train_images = train_images/255.0
+test_images = test_images/255.0
 
 # Creating a model
 
@@ -51,7 +55,7 @@ print("Tested Acc : ", test_acc)
 
 # Using model to predict
 
-model.save('fashion_mnist.h5')
+#model.save('fashion_mnist.h5')
 #load_model('fashion_mnist.h5')
 prediction = model.predict([test_images]) # takes np.array()
 print(np.argmax(prediction[0]))           # print the largest value and get the index of that value of image -> 0
@@ -61,7 +65,7 @@ print('Output : ',class_names[np.argmax(prediction[0])]) # Print the class name 
 
 for i in range(5):
     plt.grid(False)
-    plt.imshow(test_images[i], cmp = plt.cmap.binary)
-    plt.xlabel("Actual : ",class_labels[test_labels[i]])
-    plt.title("Prediction : ", class_names[np.argmax(prediction[i])])
+    plt.imshow(test_images[i], cmap = plt.cm.binary)
+    plt.xlabel("Actual : "+class_names[test_labels[i]])
+    plt.title("Prediction : "+class_names[np.argmax(prediction[i])])
     plt.show()

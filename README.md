@@ -84,7 +84,28 @@ print("Tested Acc : ", test_acc)
 ```
 ## 4. Using the model for prediction
 
+!['Evaluation_of_model](Images/testing.png) !['Evaluation_of_model](Images/testing_2.png)*Screenshots of output*
 
+>Python code :-
+
+```Python
+# Using model to predict
+
+#model.save('fashion_mnist.h5')
+#load_model('fashion_mnist.h5')
+prediction = model.predict([test_images]) # takes np.array()
+print(np.argmax(prediction[0]))           # print the largest value and get the index of that value of image -> 0
+print('Output : ',class_names[np.argmax(prediction[0])]) # Print the class name of the given result
+
+# To present prediction for 5 inputs using matplot
+
+for i in range(5):
+    plt.grid(False)
+    plt.imshow(test_images[i], cmap = plt.cm.binary)
+    plt.xlabel("Actual : "+class_names[test_labels[i]])
+    plt.title("Prediction : "+class_names[np.argmax(prediction[i])])
+    plt.show()
+```
 
 ## Artificial Neural Network
 
