@@ -21,7 +21,7 @@ print(train_labels[6])
 
 # Adding labels in list so that it can be easilyi identified later
 
-class_names = ['T-shirt/top','T-shirt/top','Trouser','Pullover','Dress','Coat','Sandal','Shirt','Sneaker','Bag','Ankle-Boot']
+class_names = ['T-shirt/top','Trouser','Pullover','Dress','Coat','Sandal','Shirt','Sneaker','Bag','Ankle-Boot']
 
 # Showing the image using matplot
 
