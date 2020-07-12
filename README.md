@@ -57,7 +57,7 @@ plt.show()
 ## 3. Creating a model in tensorflow
 
 
-![Model](Images/Fashion_model_creation.png)*Screenshot of training of model.
+![Model](Images/Fashion_model_creation.png)*Screenshot of training of model.*
 >Python code :-
 
 ```Python
