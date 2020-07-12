@@ -14,7 +14,7 @@ DEEP LEARNING
 
 Neural network is model that is used to recognise complex pattern in data. It is inspired by the biological neural network that constitutes human. It consist of multiple layers and every layer have two main attributes :- Nodes (as Neurons) and Edges (as the connection between the nodes).
 
-![Neural_network_Diagram](Images/Neural_Networkpng.png)*Neural_Network*
+![Neural_network_Diagram](Images/Neural_Networkpng.png).caption[*Neural_Network*]
 
 **Some Examples :-**
 
@@ -63,7 +63,7 @@ plt.show()
 ```
 ## 3. Creating a model in tensorflow
 
-![Model](Images/Fashion_model_creation.png)*Screenshot of training of model.*
+![Model](Images/Fashion_model_creation.png).caption[*Screenshot of training of model.*]
 
 >Python code :-
 
@@ -90,7 +90,7 @@ print("Tested Acc : ", test_acc)
 ```
 ## 4. Using the model for prediction
 
-!['Evaluation_of_model](Images/testing.png) !['Evaluation_of_model](Images/testing_2.png)*Screenshots of outputs*
+!['Evaluation_of_model](Images/testing.png) !['Evaluation_of_model](Images/testing_2.png).caption[*Screenshots of outputs*]
 
 >Python code :-
 
