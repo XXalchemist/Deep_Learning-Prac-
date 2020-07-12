@@ -113,6 +113,8 @@ for i in range(5):
     plt.show()
 ```
 
+## 5. Text Classification Using Deep Learning
+
 ## Artificial Neural Network
 
 _Python example_<br>
