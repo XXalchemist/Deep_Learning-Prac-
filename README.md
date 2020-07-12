@@ -1,5 +1,6 @@
 DEEP LEARNING
 ---
+>pip install requirements.txt **Important** 
 
 ## Python Intro to Neural Network
 
@@ -58,6 +59,5 @@ plt.show()
 
 _Python example_<br>
 
->pip install requirements.txt
 
 `Run ann.py`
