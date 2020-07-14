@@ -115,6 +115,13 @@ for i in range(5):
 
 ## 5. Text Classification Using Deep Learning
 
+*Screenshots*<br>
+
+![model-training](Images/model_training.png)*Fig:4 Model Training* ![model-training](Images/Example_1.png)*Fig:5 Example on test_data* ![model-training](Images/Online_Example_of_joker.png)*Fig:6 Example of movie joker review*
+
+>Python Code :-
+
+
 ## Artificial Neural Network
 
 _Python example_<br>

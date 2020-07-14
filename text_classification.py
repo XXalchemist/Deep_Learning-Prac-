@@ -60,21 +60,22 @@ print(decode_review(test_data[0]))
 
 # model.save('imdb_model.h5')
 
+
+# # Splitting the training data into validation and training data
+
+# x_val = train_data[:10000]
+# x_train = train_data[10000:]
+
+# y_val = train_labels[:10000]
+# y_train = train_labels[10000:]
+
+# # Model Fitting
+
+# fitModel = model.fit(x_train, y_train, epochs=40, batch_size=512, validation_data = (x_val, y_val), verbose=1)
+
 # Loading the model
 
-model = load_model('imdb_model.h5')
-
-# Splitting the training data into validation and training data
-
-x_val = train_data[:10000]
-x_train = train_data[10000:]
-
-y_val = train_labels[:10000]
-y_train = train_labels[10000:]
-
-# Model Fitting
-
-fitModel = model.fit(x_train, y_train, epochs=40, batch_size=512, validation_data = (x_val, y_val), verbose=1)
+model = keras.models.load_model('imdb_model.h5')
 
 # Evaluation of test_data
 
@@ -107,14 +108,14 @@ def review_encode(s):
             encoded.append(word_index[word.lower()])
         else:
             encoded.append(2)
-        return encoded
-        
+    return encoded
+
 with open('test.txt',encoding = 'utf-8') as f:
     for line in f.readlines():
-        nline = line.replace(',',"").replace('.',"").replace('(',"").replace(')',"").replace(':',"").replace('\'',"").strip()
+        nline = line.replace(',',"").replace('.',"").replace('(',"").replace(')',"").replace(':',"").replace("\"","").strip()
         encode = review_encode(nline)
         encode = keras.preprocessing.sequence.pad_sequences([encode], value = word_index['<PAD>'], padding ='post', maxlen = 250)
         predict = model.predict(encode)
         print(line)
         print(encode)
-        print(predict[0])
+        print(predict[0]) 
