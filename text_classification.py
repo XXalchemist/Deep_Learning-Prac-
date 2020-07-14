@@ -52,5 +52,13 @@ model.add(keras.layers.GlobalAveragePooling1D()) # Convert into average for each
 model.add(keras.layers.Dense(16, activation = 'relu')) # To recognize pattern
 model.add(keras.layers.Dense(16, activation = 'sigmoid'))
 
+model.summary()
+model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 
+# Splitting the training data into validation and training data
 
+x_val = train_data[:10000]
+x_train = train_data[10000:]
+
+y_val = train_labels[:10000]
+y_train = train_labels[:10000]
