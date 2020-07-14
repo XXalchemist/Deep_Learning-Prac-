@@ -13,7 +13,7 @@ import numpy as np
 
 data = keras.datasets.imdb
 
-(train_data, train_labels), (test_data, test_labels) = data.load_data(num_words = 10000 ) # Split 10000 words
+(train_data, train_labels), (test_data, test_labels) = data.load_data(num_words = 880000 ) # Split 10000 words
 
 # Getting word_index
 
@@ -47,7 +47,7 @@ print(decode_review(test_data[0]))
 # Model
 
 model = keras.Sequential()
-model.add(keras.layers.Embedding(1000 ,16)) # This layer is responsible for finding vectors of each word
+model.add(keras.layers.Embedding(88000 ,16)) # This layer is responsible for finding vectors of each word
 model.add(keras.layers.GlobalAveragePooling1D()) # Convert into average for each layer
 model.add(keras.layers.Dense(16, activation = 'relu')) # To recognize pattern
 model.add(keras.layers.Dense(16, activation = 'sigmoid'))
