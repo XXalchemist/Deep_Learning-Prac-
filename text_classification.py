@@ -8,6 +8,7 @@ Classification of Movies reviews through Deep Learning
 import tensorflow as tf
 from tensorflow import keras
 import numpy as np
+from keras.models import load_model
 
 # Loading dataset
 
@@ -46,22 +47,22 @@ print(decode_review(test_data[0]))
 
 # Model
 
-model = keras.Sequential()
-model.add(keras.layers.Embedding(88000 ,16)) # This layer is responsible for finding vectors of each word
-model.add(keras.layers.GlobalAveragePooling1D()) # Convert into average for each layer
-model.add(keras.layers.Dense(16, activation = 'relu')) # To recognize pattern
-model.add(keras.layers.Dense(1, activation = 'sigmoid'))
+# model = keras.Sequential()
+# model.add(keras.layers.Embedding(88000 ,16)) # This layer is responsible for finding vectors of each word
+# model.add(keras.layers.GlobalAveragePooling1D()) # Convert into average for each layer
+# model.add(keras.layers.Dense(16, activation = 'relu')) # To recognize pattern
+# model.add(keras.layers.Dense(1, activation = 'sigmoid'))
 
-model.summary()
-model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+# model.summary()
+# model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 
-# Saving Model
+# # Saving Model
 
-model.save('imdb_model.h5')
+# model.save('imdb_model.h5')
 
 # Loading the model
 
-#model = keras.models.load_model('imdb_model.h5')
+model = load_model('imdb_model.h5')
 
 # Splitting the training data into validation and training data
 
@@ -81,7 +82,7 @@ results = model.evaluate(test_data, test_labels)
 print(results)
 
 
-# Example of Prediction of data
+# Example of Prediction of data from test data
 
 test_review = test_data[0]
 predict = model.predict([test_review])
@@ -89,3 +90,31 @@ print('Review : ')
 print(decode_review(test_review))
 print('Prediction : ',str(predict[0]))
 print('Actual : ',str(test_labels[0]))
+
+# Example of Prediction of data from online data
+
+print('-'*35,'Example For prediction of Movie Review','-'*35)
+
+# Loading text file
+
+# Review_encode Function
+
+def review_encode(s):
+    encoded = [1]
+
+    for word in s:
+        if word in word_index:
+            encoded.append(word_index[word.lower()])
+        else:
+            encoded.append(2)
+        return encoded
+        
+with open('test.txt',encoding = 'utf-8') as f:
+    for line in f.readlines():
+        nline = line.replace(',',"").replace('.',"").replace('(',"").replace(')',"").replace(':',"").replace('\'',"").strip()
+        encode = review_encode(nline)
+        encode = keras.preprocessing.sequence.pad_sequences([encode], value = word_index['<PAD>'], padding ='post', maxlen = 250)
+        predict = model.predict(encode)
+        print(line)
+        print(encode)
+        print(predict[0])
