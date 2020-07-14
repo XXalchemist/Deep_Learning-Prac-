@@ -1,6 +1,6 @@
 '''
 Text Classification using Tensorflow -
-Classification of Movies through IMDB database 
+Classification of Movies reviews through Deep Learning 
 '''
 
 # Importing libraries
@@ -43,4 +43,14 @@ def decode_review(test):
     return " ".join([reverse_word_index.get(i, "?") for i in text])
 
 print(decode_review(test_data[0]))
+
+# Model
+
+model = keras.Sequential()
+model.add(keras.layers.Embedding(1000 ,16)) # This layer is responsible for finding vectors of each word
+model.add(keras.layers.GlobalAveragePooling1D()) # Convert into average for each layer
+model.add(keras.layers.Dense(16, activation = 'relu')) # To recognize pattern
+model.add(keras.layers.Dense(16, activation = 'sigmoid'))
+
+
 
