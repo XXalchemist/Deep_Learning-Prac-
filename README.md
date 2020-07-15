@@ -113,7 +113,7 @@ for i in range(5):
     plt.show()
 ```
 
-## 5. Text Classification Using Deep Learning
+## 5. Text Classification (NLP) Using Deep Learning
 
 #### Screenshots :-
 
@@ -175,10 +175,6 @@ model.add(keras.layers.Dense(1, activation = 'sigmoid'))
 
 model.summary()
 model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
-
-# Saving Model
-
- model.save('imdb_model.h5')
 
 
 # Splitting the training data into validation and training data
